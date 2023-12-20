@@ -1,10 +1,45 @@
-- 👋 Hi, I’m @monesh108
-- 👀 I’m interested in ...
-- 🌱 I’m currently learning ...
-- 💞️ I’m looking to collaborate on ...
-- 📫 How to reach me ...
-
-<!---
-monesh108/monesh108 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+//Multiplication of two Matrics
+#include<stdio.h>
+int main(){
+	printf("Name: Monesh\nReg no: 192324027\n");
+	
+	int r1,c1,r2,c2,i,j;
+	printf("Enter the row and column of Matrix 1:");
+	scanf("%d %d",&r1,&c1);
+	int mat1[r1][c1];
+	printf("\nEnter the elements of Matrix 1:\n");
+	for(i=0;i<r1;i++){
+		for(j=0;j<c1;j++)
+		scanf("%d",&mat1[i][j]);
+	}
+	printf("\nEnter the row and column of Matrix 2:");
+	scanf("%d %d",&r2,&c2);
+	int mat2[r2][c2];
+	printf("\nEnter the elements of Matrix 2:\n");
+	for(i=0;i<r2;i++){
+		for(j=0;j<c2;j++)
+		scanf("%d",&mat2[i][j]);
+	}
+	if(c1!=r2){
+		scanf("\nThe entered Matrices cannot be multiplied together");
+		return 0;
+	}
+	int mat3[r1][c2];
+	int k;
+	for(i=0;i<r1;i++){
+		for(j=0;j<c2;j++){
+			mat3[i][j]=0;
+			for(k=0;k<r1;k++){
+				mat3[i][j]+=(mat1[i][k]*mat2[k][j]);
+			}
+		}
+	}
+	printf("\n\nThe resultant matrix is \n");
+	for(i=0;i<r1;i++){
+		for(j=0;j<c2;j++){
+			printf("%d  ",mat3[i][j]);
+		}
+		printf("\n");
+	}
+	return 0;
+}
