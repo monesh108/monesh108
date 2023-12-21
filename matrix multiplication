@@ -1,0 +1,47 @@
+#include<stdio.h>
+int main()
+{
+	printf("\nMonesh.....Reg.no:192324027\n");
+	int i=0,j,k;
+	int r=0;
+	int a[3][3],b[3][3],c[3][3];
+	printf("\nEnter the elements for matrix A (3x3):\n");
+	for(i=0;i<3;i++)
+	{
+		for(j=0;j<3;j++)
+		{
+			scanf("%d",&a[i][j]);
+		}
+	}
+	printf("\nEnter the elements for matrix B (3x3):\n");
+	for(i=0;i<3;i++)
+	{
+		for(j=0;j<3;j++)
+		{
+			scanf("%d",&b[i][j]);
+		}
+	}
+	for(k=0;k<3;k++)
+	{
+		for( i=0;i<3;i++)
+		{
+			c[k][i]=0;
+			for(j=0;j<3;j++)
+			{
+			
+				c[k][i]+=(a[k][j]*b[j][i]);
+			}
+			
+		}
+	
+	}
+	for(i=0;i<3;i++)
+	{
+		printf("\n");
+		for(j=0;j<3;j++)
+		{
+			printf("%d  ",c[i][j]);
+		}
+	}
+	return 0;
+}
