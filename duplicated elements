@@ -25,7 +25,9 @@ int main()
 		}
 		if(count!=1)
 		{
+			if(arr[i]!=r)
 			printf(" %d",arr[i]);
+			r=arr[i];
 		}
 	}
 	return 0;
