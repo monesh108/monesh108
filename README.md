@@ -1,51 +1,27 @@
+Day 1 - Arrays
 
-#include <stdio.h>
+1.1. Addition of Two Matrices
+1.2. Multiplication of Two Matrices
+1.3. Sum of Diagonals
+1.4. Transpose of a Matrix
+1.5. Insert element in array
+1.6. Delete element in array
+1.7. Merging arrays
+1.8. Find duplicate element
+1.9. Display the location of given element in array and print it
+1.10. Ascending/Descending/Alphabet order
+1.11. Check validation of String
+1.12. Largest element in matrix
+1.13. Repeated twice in array
+1.14. Print odd and even in given array
+1.15. Sum of row and column in matrix
+1.16. Given array elements display 5th iterated element
 
-int main()
-{
-	int SIZE =3;
-	printf("\nMonesh......\n");
-    int A[SIZE][SIZE]; 
-    int B[SIZE][SIZE];
-    int C[SIZE][SIZE]; 
+Day 2 - Recursion and Search
 
-    int row, col;
-
-   
-    printf("Enter elements in matrix A of size 3x3: \n");
-    for(row=0; row<SIZE; row++)
-    {
-        for(col=0; col<SIZE; col++)
-        {
-            scanf("%d", &A[row][col]);
-        }
-    }
-
-    printf("\nEnter elements in matrix B of size 3x3: \n");
-    for(row=0; row<SIZE; row++)
-    {
-        for(col=0; col<SIZE; col++)
-        {
-            scanf("%d", &B[row][col]);
-        }
-    }
-
-    for(row=0; row<SIZE; row++)
-    {
-        for(col=0; col<SIZE; col++)
-        {
-            C[row][col] = A[row][col] + B[row][col];
-        }
-    }
-    printf("\nSum of matrices A+B = \n");
-    for(row=0; row<SIZE; row++)
-    {
-        for(col=0; col<SIZE; col++)
-        {
-            printf("%d ", C[row][col]);
-        }
-        printf("\n");
-    }
-
-    return 0;
-}
+2.1. Find Fibbonacci series upto n numbers and it's sum
+2.2. Find the Factorial of a given number
+2.3. Find the nth Fibbonacci number using recursion
+2.4. Find the Factorial of a given number using recursion
+2.5. Linear search of array
+2.6. Binary search of array
