@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	char a[20];
+	printf("\nEnter a string :");
+	for(int i=0;i<20;i++)
+	{
+		scanf("%[^\n]s",&a[i]);
+	}
+	int j=strlen(a);
+	printf("%d",j);
+	if(a[0]=='('&&a[j-1]==')')
+	{
+		printf("\nIt is valid string...");
+	}
+	else 
+	{
+		printf("\nIt is invalid string...");
+	}
+	return 0;
+}
