@@ -1,0 +1,84 @@
+#include<stdio.h>
+int stack[10]={};
+int top=-1;
+int c=10;
+int isFull()
+{
+	if(top==(c-1))
+	{
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
+}
+int isempty()
+{
+	if(top==NULL)
+	{
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
+}
+void push(int num)
+{
+	if(!isFull())
+	{
+		top=top+1;
+		stack[top]=num;
+	}
+}
+void pop()
+{
+	int data;
+	if(!isempty())
+	{
+		data=stack[top];
+		top=top-1;
+		printf("\nDeleted element is: %d",data);
+	}
+}
+void disp()
+{
+	printf("\n\nElements in the stack are: ");
+	int i;
+	for(i=top;i>-1;i--)
+	{
+		printf("%d ",stack[i]);
+	}
+}
+void peek()
+{
+	printf("\n\nThe top element of the stack : %d",stack[top]);
+}
+int main()
+{
+	int a=0,b=0;
+	while(a!=5)
+	{
+		printf("\n\n1. Adding element\n2. Deleting elements\n3. Displaying all elements\n4. Displaying top element\n\n");
+		printf("Enter your choice:");
+		scanf("%d",&a);
+		switch(a){
+			case 1:
+				printf("\nEnter a number:");
+				scanf("%d",&b);
+				push(b);
+				break;
+			case 2:
+				pop();
+				break;
+			case 3:
+				disp();
+				break;
+			case 4:
+				peek();
+				break;
+		}
+	}
+	return 0;
+}
