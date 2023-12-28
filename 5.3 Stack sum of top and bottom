@@ -1,0 +1,51 @@
+#include<stdio.h>
+struct node
+{
+	int data;
+	struct node *next;
+}*top,*n;
+void push(int num)
+{
+	n=(struct node*)malloc(sizeof(struct node));
+	if(!n)
+	{
+		printf("\nOverflow");
+		exit(1);
+	}
+	else
+	{
+		n->data=num;
+		n->next=top;
+		top=n;
+	}
+}
+void disp()
+{
+	struct node *t,*a;
+	t=top;
+	a=top;
+	while(t->next!=NULL)
+	{
+		t=t->next;
+	}
+	printf("\n\nThe sum of bottom most and top most elements are: %d",(a->data+t->data));
+}
+int main()
+{
+	int b=0,c=0;
+	while(b!=2)
+	{
+		printf("\n1. Add elements\n2. exit\nEnter your choice:");
+		scanf("%d",&b);
+		switch(b)
+		{
+		case 1:
+			printf("\n\nEnter a number:");
+			scanf("%d",&c);
+			push(c);
+			break;
+		}
+	}
+	disp();
+	return 0;
+}
