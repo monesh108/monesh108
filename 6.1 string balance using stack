@@ -1,0 +1,77 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct node
+{
+    char data;
+    struct node *next;
+} *n;
+
+void push(struct node **top, char data) {
+    n = (struct node *)malloc(sizeof(struct node));
+    n->data = data;
+    n->next = NULL;
+    if (*top == NULL) {
+        *top = n;
+    } else {
+        n->next = *top;
+        *top = n;
+    }
+}
+
+char pop(struct node **top)
+{
+    if(*top == NULL)
+	{
+        printf("\nOverflow");
+        exit(1);
+    }
+    struct node *t = *top;
+    char temp = t->data;
+    *top = t->next;
+    free(t);
+    return temp;
+}
+
+void check(char *str)
+{
+    struct node *top = NULL; 
+
+    while (*str)
+	{
+        if(*str == '(' || *str == '{' || *str == '[')
+		{
+            push(&top,*str);
+        } 
+		else if (*str == ')' || *str == '}' || *str == ']')
+		{
+            if (top == NULL) 
+			{
+                printf("\nUnbalanced");
+                return;
+            }
+            char popped = pop(&top);
+            if (*str == ')' && popped != '(' || *str == '}' && popped != '{' || *str == ']' && popped != '[')
+			{
+                printf("\nUnbalanced");
+                return;
+            }
+        }
+        str++;
+    }
+
+    if (top == NULL)
+	{
+        printf("\nBalanced");
+    } else
+	{
+        printf("\nUnbalanced");
+    }
+}
+
+int main() {
+    printf("Name: Monesh\nReg No: 192324027\n");
+    char str[] = "";
+    check(str);
+    return 0;
+}
