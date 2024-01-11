@@ -1,0 +1,90 @@
+#include<stdio.h>
+int Q[10];
+int c=10;
+int i;
+int front=-1;
+int rear=-1;
+void enq(int num)
+{
+	if(rear==(c-1))
+	{
+		printf("\nQueue is full...");
+	}
+	else if(rear==-1)
+	{
+		rear=front=0;
+		Q[rear]=num;
+	}
+	else
+	{
+		rear=rear+1;
+		Q[rear]=num;
+	}
+}
+void deq()
+{
+	if(front==-1)
+	{
+		printf("\nNo elements found, Queue is empty");
+	}
+	else 
+	{
+		printf("\nDeleted element is: %d\n\n",Q[front]);
+		front=front+1;
+	}
+}
+void peek()
+{
+	printf("\n\nThe front element is : %d\n",Q[front]);
+}
+void reardisp()
+{
+	printf("\n\nThe rear element is : %d\n\n",Q[rear]);
+}
+void disp()
+{
+	if(front==-1)
+	{
+		printf("\n\nQueue is empty...");
+	}
+	else	
+	{
+		printf("\n\nElements in the Queue are: ");
+		for(i=front;i<=rear;i++)
+		{
+			printf("%d ",Q[i]);
+		}
+		printf("\n\n");
+	}
+}
+int main()
+{
+	printf("Name: Monesh \nReg no:192324027");
+	int a=0,b=0;
+	while(a!=6)
+	{
+		printf("\n1. Add element in Queue\n2. Delete element from Queue\n3. Front element\n4. Rear element\n5. Display the elements\n6. End\nEnter your choice:");
+		scanf("%d",&a);
+		switch(a)
+		{
+			case 1:
+				printf("\nEnter a number:");
+				scanf("%d",&b);
+				enq(b);
+				break;
+			case 2:
+				deq();
+				break;
+			case 3:
+				peek();
+				break;
+			case 4:
+				reardisp();
+				break;
+			case 5:
+				disp();
+				break;
+		}
+	}
+	return 0;
+}
